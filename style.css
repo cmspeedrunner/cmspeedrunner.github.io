@@ -251,41 +251,33 @@ footer {
 .button-list {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin-top: 2.5rem;
+  gap: 1rem;
+  margin-top: 2rem;
   align-items: flex-start;
 }
 
 .button-list-item {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 0.9rem 1.4rem;
-  background-color: #1c1c1c;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background-color: #1b1b1b;
   color: #00e0ff;
-  border: 2px solid #2e2e2e;
   border-radius: 8px;
   font-weight: 600;
   font-size: 1.05rem;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .button-list-item:hover {
-  background-color: #252525;
-  color: #00f7ff;
+  background-color: #242424;
   transform: translateY(-2px);
+  color: #00f7ff;
 }
 
 .button-list-item .icon {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   flex-shrink: 0;
-}
-
-/* Optional: remove default button styles */
-.button-list-item {
-  border: none;
-  outline: none;
-  background: none;
 }
