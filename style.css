@@ -130,7 +130,7 @@ hr {
 
 /* Footer */
 footer {
-  position: bottom;
+  position: absolute;
   width: 100%;
   padding: 1.5rem 0;
   background-color: #000000;
