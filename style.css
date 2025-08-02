@@ -247,3 +247,34 @@ footer {
   background-color: #56ca73;
   transform: translateY(-2px);
 }
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button-list-item {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #1a1a1a;
+  color: #00f0ff;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-align: left;
+}
+
+.button-list-item:hover {
+  background-color: #222;
+  transform: translateY(-2px);
+  color: #00eaff;
+}
+
+.button-list-item::before {
+  content: '';
+  margin-right: 0.5rem;
+}
