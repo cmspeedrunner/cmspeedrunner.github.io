@@ -1,13 +1,13 @@
 // --- search.js with autocomplete dropdown and fuzzy search ---
 
 const categories = [
-  { name: "Movies and Television", id: "movies-tv", keywords: ["movies", "tv", "television", "film", "shows", "anime"] },
-  { name: "Gaming", id: "gaming", keywords: ["games", "gaming", "video games"] },
-  { name: "Music and Podcasts", id: "music", keywords: ["music", "songs", "podcasts", "audio"] },
-  { name: "Courses and Education", id: "education", keywords: ["education", "courses", "learning", "udemy", "skills"] },
-  { name: "Literature", id: "literature", keywords: ["books", "literature", "novels", "ebooks", "reading"] },
-  { name: "VPNs", id: "vpns", keywords: ["vpn", "proton", "warp", "bitmask"] },
-  { name: "Live TV and Sports", id: "livetv", keywords: ["live tv", "sports", "football", "soccer", "stream", "channels"] }
+  { name: "Movies and Television", id: "movies-tv", keywords: ["movies", "tv", "television", "film", "shows", "anime", "all"] },
+  { name: "Gaming", id: "gaming", keywords: ["games", "gaming", "video games", "all"] },
+  { name: "Music and Podcasts", id: "music", keywords: ["music", "songs", "podcasts", "audio", "all"] },
+  { name: "Courses and Education", id: "education", keywords: ["education", "courses", "learning", "udemy", "skills", "all"] },
+  { name: "Literature", id: "literature", keywords: ["books", "literature", "novels", "ebooks", "reading", "all"] },
+  { name: "VPNs", id: "vpns", keywords: ["vpn", "proton", "warp", "bitmask", "all"] },
+  { name: "Live TV and Sports", id: "livetv", keywords: ["live tv", "sports", "football", "soccer", "stream", "channels", "all"] }
 ];
 
 const input = document.getElementById('searchInput');
