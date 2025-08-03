@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search The Black Bar Archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search - The Black Bar Archive</title>
+  <link rel="icon" href="/HQ icon.png" type="image/png" />
   <link rel="stylesheet" href="/style.css" />
+  <script defer src="search.js"></script>
+</head>
+<body>
   <header>
     <nav class="navbar">
       <div class="logo">The Black Bar Archive</div>
@@ -16,132 +20,15 @@
       </ul>
     </nav>
   </header>
-  <style>
-    body {
-      background: linear-gradient(to right, #000000, #141414);
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 2rem;
-    }
 
-    .search-wrapper {
-      max-width: 700px;
-      margin: 4rem auto;
-      text-align: center;
-    }
-
-    .search-wrapper h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .search-bar {
-      display: flex;
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 2rem;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-      margin: 0 auto 2rem auto;
-      width: 100%;
-    }
-
-    .search-bar input {
-      flex-grow: 1;
-      padding: 0.75rem 1rem;
-      border: none;
-      background: transparent;
-      color: #fff;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    .search-bar button {
-      background-color: #222;
-      color: #ccc;
-      border: none;
-      padding: 0 1.2rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    .results {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .result-item {
-      background: #1c1c1c;
-      border: 1px solid #333;
-      padding: 1rem;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-      transition: background 0.2s ease;
-    }
-
-    .result-item:hover {
-      background: #2a2a2a;
-    }
-
-    .result-item a {
-      color: #76c7ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-    
-  <div class="search-wrapper">
+  <main class="search-page">
     <h1>Search The Archive</h1>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Type to search categories...">
-      <button onclick="handleSearch()">🔍</button>
-    </div>
-    <div id="results" class="results"></div>
-  </div>
+    <input type="text" id="searchInput" placeholder="Search categories..." />
+    <ul id="searchResults" class="results-list"></ul>
+  </main>
 
-  <script>
-    const archiveCategories = [
-      { name: "Movies & TV", id: "movies-tv", keywords: ["movies", "film", "tv", "television", "films", "cinema", "movie", "tv shows"] },
-      { name: "Gaming", id: "gaming", keywords: ["gaming", "games", "video games", "steam"] },
-      { name: "Music & Podcasts", id: "music", keywords: ["music", "songs", "podcasts", "spotify", "albums"] },
-      { name: "Education", id: "education", keywords: ["education", "courses", "free courses", "udemy", "classes", "school", "learn"] },
-      { name: "Literature", id: "literature", keywords: ["literature", "books", "ebooks", "novels"] },
-      { name: "VPNs", id: "vpns", keywords: ["vpn", "vpns"] },
-      { name: "Live TV & Sports", id: "livetv", keywords: ["live", "tv", "stream", "football", "soccer", "sports"] }
-    ];
-
-    const searchInput = document.getElementById('searchInput');
-    const resultsDiv = document.getElementById('results');
-
-    searchInput.addEventListener('input', handleSearch);
-
-    function handleSearch() {
-      const query = searchInput.value.toLowerCase();
-      resultsDiv.innerHTML = '';
-
-      if (!query) return;
-
-      const matches = archiveCategories.filter(cat =>
-        cat.keywords.some(k => k.includes(query)) || cat.name.toLowerCase().includes(query)
-      );
-
-      if (matches.length === 0) {
-        resultsDiv.innerHTML = '<p>No results found.</p>';
-        return;
-      }
-
-      matches.forEach(match => {
-        const div = document.createElement('div');
-        div.className = 'result-item';
-        div.innerHTML = `<a href="pages/Archive/archive.html#${match.id}">${match.name}</a>`;
-        resultsDiv.appendChild(div);
-      });
-    }
-  </script>
-
+  <footer>
+    <p>&copy; 2025 The Black Bar Archive</p>
+  </footer>
 </body>
 </html>
