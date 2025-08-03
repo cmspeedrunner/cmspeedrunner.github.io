@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Search The Black Bar Archive</title>
+  <title>Search - The Black Bar Archive</title>
   <link rel="icon" href="/HQ icon.png" type="image/png" />
   <link rel="stylesheet" href="/style.css" />
-  <script defer src="search.js"></script>
+  <script defer src="/search.js"></script>
 </head>
 <body>
   <header>
@@ -21,14 +21,11 @@
     </nav>
   </header>
 
-  <div class="search-wrapper">
+  <main class="search-page">
     <h1>Search The Archive</h1>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Type to search categories...">
-      <button onclick="handleSearch()">🔍</button>
-    </div>
-    <div id="results" class="results"></div>
-  </div>
+    <input type="text" id="searchInput" placeholder="Search categories..." />
+    <ul id="searchResults" class="results-list"></ul>
+  </main>
 
   <footer>
     <p>&copy; 2025 The Black Bar Archive</p>
