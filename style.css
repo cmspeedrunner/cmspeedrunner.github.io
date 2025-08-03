@@ -244,7 +244,12 @@ hr {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to right, #000000, #141414);
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(20, 20, 20, 0.85)),
+    url("media/webtile2.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
   padding: 12.1rem 2rem;
   text-align: center;
