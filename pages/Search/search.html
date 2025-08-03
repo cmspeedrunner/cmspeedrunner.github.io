@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Search - The Black Bar Archive</title>
-  <link rel="icon" href="/HQ icon.png" type="image/png" />
+  <link rel="icon" type="image/png" href="/HQ icon.png" />
   <link rel="stylesheet" href="/style.css" />
-  <script defer src="search.js"></script>
+  <link rel="stylesheet" href="search.css" />
 </head>
 <body>
   <header>
@@ -22,13 +22,17 @@
   </header>
 
   <main class="search-page">
-    <h1>Search The Archive</h1>
-    <input type="text" id="searchInput" placeholder="Search categories..." />
-    <ul id="searchResults" class="results-list"></ul>
+    <h1>Search the Archive</h1>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search categories..." autocomplete="off" />
+      <ul id="autocomplete-list"></ul>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 The Black Bar Archive</p>
   </footer>
+
+  <script src="search.js"></script>
 </body>
 </html>

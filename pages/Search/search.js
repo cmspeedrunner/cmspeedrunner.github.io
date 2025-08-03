@@ -1,34 +1,63 @@
-const categories = [
-  { name: "Movies and Television", id: "movies-tv", keywords: ["movies", "tv", "television", "film", "shows", "anime"] },
-  { name: "Gaming", id: "gaming", keywords: ["games", "gaming", "video games"] },
-  { name: "Music and Podcasts", id: "music", keywords: ["music", "songs", "podcasts", "audio"] },
-  { name: "Courses and Education", id: "education", keywords: ["education", "courses", "learning", "udemy", "skills"] },
-  { name: "Literature", id: "literature", keywords: ["books", "literature", "novels", "ebooks", "reading"] },
-  { name: "VPNs", id: "vpns", keywords: ["vpn", "proton", "warp", "bitmask"] },
-  { name: "Live TV and Sports", id: "livetv", keywords: ["live tv", "sports", "football", "soccer", "stream", "channels"] }
-];
+const categoryMap = {
+  'movies': 'movies-tv',
+  'movies and television': 'movies-tv',
+  'tv': 'movies-tv',
+  'television': 'movies-tv',
+  'film': 'movies-tv',
+  'films': 'movies-tv',
+  'gaming': 'gaming',
+  'games': 'gaming',
+  'video games': 'gaming',
+  'music': 'music',
+  'podcasts': 'music',
+  'songs': 'music',
+  'education': 'education',
+  'courses': 'education',
+  'free courses': 'education',
+  'ebooks': 'literature',
+  'novels': 'literature',
+  'literature': 'literature',
+  'books': 'literature',
+  'vpn': 'vpns',
+  'vpns': 'vpns',
+  'football': 'livetv',
+  'soccer': 'livetv',
+  'stream': 'livetv',
+  'live': 'livetv',
+  'live tv': 'livetv',
+  'sports': 'livetv'
+};
 
-const input = document.getElementById('searchInput');
-const results = document.getElementById('searchResults');
+const keywords = Object.keys(categoryMap);
 
-input.addEventListener('input', () => {
-  const query = input.value.toLowerCase().trim();
-  results.innerHTML = '';
+const searchInput = document.getElementById("searchInput");
+const resultsList = document.getElementById("autocomplete-list");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.trim().toLowerCase();
+  resultsList.innerHTML = "";
 
   if (!query) return;
 
-  const matches = categories.filter(cat => 
-    cat.name.toLowerCase().includes(query) ||
-    cat.keywords.some(keyword => keyword.includes(query))
-  );
+  const matches = keywords.filter(keyword => keyword.includes(query));
+  const fuzzyMatches = matches.length ? matches : keywords.filter(keyword => keyword.startsWith(query[0]));
 
-  if (matches.length === 0) {
-    results.innerHTML = `<li class="no-results">No matching categories found.</li>`;
-  } else {
-    matches.forEach(match => {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="/pages/Archive/archive.html#${match.id}">${match.name}</a>`;
-      results.appendChild(li);
+  fuzzyMatches.forEach(match => {
+    const li = document.createElement("li");
+    li.textContent = match;
+    li.addEventListener("click", () => {
+      const targetId = categoryMap[match];
+      if (targetId) {
+        window.location.href = `/pages/Archive/archive.html#${targetId}`;
+      }
     });
+    resultsList.appendChild(li);
+  });
+});
+
+// Optional: allow Enter to search
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && resultsList.firstChild) {
+    resultsList.firstChild.click();
   }
 });
