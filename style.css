@@ -95,14 +95,6 @@ a:hover {
   letter-spacing: 0.5px;
 }
 
-.logo a{
-  color: #ffffff;
-}
-
-.logo a:hover{
-  color: #ffffff;
-  text-decoration: none;
-}
 
 .nav-links {
   display: flex;
