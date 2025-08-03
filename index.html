@@ -11,6 +11,11 @@
   <header>
     <nav class="navbar">
       <div class="logo">The Black Bar Archive</div>
+
+      <form class="search-form" onsubmit="handleSearch(event)">
+      <input type="text" id="searchInput" placeholder="Search categories..." />
+      </form>
+
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="pages/About/about.html">About</a></li>
@@ -46,5 +51,7 @@
   <footer>
     <p>&copy; 2025 The Black Bar Archive</p>
   </footer>
+  <script src="script.js"></script>
+
 </body>
 </html>
