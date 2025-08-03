@@ -245,7 +245,7 @@ hr {
 /* Hero Section */
 .hero {
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(20, 20, 20, 0.85)),
+    linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(20, 20, 20, 0.85)),
     url("media/webtile2.webp");
   background-size: cover;
   background-position: center;
