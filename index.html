@@ -12,9 +12,12 @@
     <nav class="navbar">
       <div class="logo">The Black Bar Archive</div>
 
-      <form class="search-form" onsubmit="handleSearch(event)">
-      <input type="text" id="searchInput" placeholder="Search categories..." />
-      </form>
+      <div class="search-container">
+        <form id="searchForm">
+          <input type="text" id="searchInput" placeholder="Search the archive..." />
+          <button type="submit">🔍</button>
+        </form>
+      </div>
 
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
