@@ -1,4 +1,4 @@
-const categories = [
+const archiveCategories = [
   { name: "Movies and Television", id: "movies-tv", keywords: ["movies", "tv", "television", "film", "shows", "anime"] },
   { name: "Gaming", id: "gaming", keywords: ["games", "gaming", "video games"] },
   { name: "Music and Podcasts", id: "music", keywords: ["music", "songs", "podcasts", "audio"] },
@@ -6,29 +6,32 @@ const categories = [
   { name: "Literature", id: "literature", keywords: ["books", "literature", "novels", "ebooks", "reading"] },
   { name: "VPNs", id: "vpns", keywords: ["vpn", "proton", "warp", "bitmask"] },
   { name: "Live TV and Sports", id: "livetv", keywords: ["live tv", "sports", "football", "soccer", "stream", "channels"] }
-];
+    ];
 
-const input = document.getElementById('searchInput');
-const results = document.getElementById('searchResults');
+    const searchInput = document.getElementById('searchInput');
+    const resultsDiv = document.getElementById('results');
 
-input.addEventListener('input', () => {
-  const query = input.value.toLowerCase().trim();
-  results.innerHTML = '';
+    searchInput.addEventListener('input', handleSearch);
 
-  if (!query) return;
+    function handleSearch() {
+      const query = searchInput.value.toLowerCase();
+      resultsDiv.innerHTML = '';
 
-  const matches = categories.filter(cat => 
-    cat.name.toLowerCase().includes(query) ||
-    cat.keywords.some(keyword => keyword.includes(query))
-  );
+      if (!query) return;
 
-  if (matches.length === 0) {
-    results.innerHTML = `<li class="no-results">No matching categories found.</li>`;
-  } else {
-    matches.forEach(match => {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="/pages/Archive/archive.html#${match.id}">${match.name}</a>`;
-      results.appendChild(li);
-    });
-  }
-});
+      const matches = archiveCategories.filter(cat =>
+        cat.keywords.some(k => k.includes(query)) || cat.name.toLowerCase().includes(query)
+      );
+
+      if (matches.length === 0) {
+        resultsDiv.innerHTML = '<p>No results found.</p>';
+        return;
+      }
+
+      matches.forEach(match => {
+        const div = document.createElement('div');
+        div.className = 'result-item';
+        div.innerHTML = `<a href="pages/Archive/archive.html#${match.id}">${match.name}</a>`;
+        resultsDiv.appendChild(div);
+      });
+    }
