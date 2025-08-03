@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Search The Black Bar Archive</title>
   <link rel="stylesheet" href="/style.css" />
+  <header>
+    <nav class="navbar">
+      <div class="logo">The Black Bar Archive</div>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About/about.html">About</a></li>
+        <li><a href="/pages/Archive/archive.html">Archive</a></li>
+        <li><a href="/pages/AboutProject/project.html">The BBA Project</a></li>
+      </ul>
+    </nav>
+  </header>
   <style>
     body {
       background: linear-gradient(to right, #000000, #141414);
@@ -82,17 +93,7 @@
   </style>
 </head>
 <body>
-    <header>
-    <nav class="navbar">
-      <div class="logo">The Black Bar Archive</div>
-      <ul class="nav-links">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/pages/About/about.html">About</a></li>
-        <li><a href="/pages/Archive/archive.html">Archive</a></li>
-        <li><a href="/pages/AboutProject/project.html">The BBA Project</a></li>
-      </ul>
-    </nav>
-  </header>
+    
   <div class="search-wrapper">
     <h1>Search The Archive</h1>
     <div class="search-bar">
@@ -104,10 +105,10 @@
 
   <script>
     const archiveCategories = [
-      { name: "Movies & TV", id: "movies-tv", keywords: ["movies", "film", "tv", "television"] },
-      { name: "Gaming", id: "gaming", keywords: ["gaming", "games", "video games"] },
-      { name: "Music & Podcasts", id: "music", keywords: ["music", "songs", "podcasts"] },
-      { name: "Education", id: "education", keywords: ["education", "courses", "free courses"] },
+      { name: "Movies & TV", id: "movies-tv", keywords: ["movies", "film", "tv", "television", "films", "cinema", "movie", "tv shows"] },
+      { name: "Gaming", id: "gaming", keywords: ["gaming", "games", "video games", "steam"] },
+      { name: "Music & Podcasts", id: "music", keywords: ["music", "songs", "podcasts", "spotify", "albums"] },
+      { name: "Education", id: "education", keywords: ["education", "courses", "free courses", "udemy", "classes", "school", "learn"] },
       { name: "Literature", id: "literature", keywords: ["literature", "books", "ebooks", "novels"] },
       { name: "VPNs", id: "vpns", keywords: ["vpn", "vpns"] },
       { name: "Live TV & Sports", id: "livetv", keywords: ["live", "tv", "stream", "football", "soccer", "sports"] }
@@ -141,8 +142,6 @@
       });
     }
   </script>
-  <footer>
-    <p>&copy; 2025 The Black Bar Archive</p>
-  </footer>
+
 </body>
 </html>
