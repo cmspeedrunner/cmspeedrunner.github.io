@@ -102,7 +102,9 @@ a:hover {
 .logo a:hover{
   color: #ffffff;
   text-decoration: none;
+  cursor: pointer;
 }
+
 .nav-links {
   display: flex;
   gap: 2rem;
